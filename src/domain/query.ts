@@ -1,0 +1,6 @@
+import type {Question} from '../types/domain';
+export interface QuestionQuery {examId?:string;subjectIds?:string[];chapterIds?:string[];syllabusNodeIds?:string[];knowledgePointIds?:string[];types?:string[];difficulties?:number[];sourceTypes?:string[];sourceNatures?:string[];examYears?:number[];reviewStatuses?:string[];text?:string}
+export function queryQuestions(questions:Question[],filter:QuestionQuery):Question[]{
+    const overlap=(a:string[]|undefined,b:string[])=>!a?.length||a.some(k=>b.includes(k));
+    return questions.filter(q=>(!filter.examId||q.examId===filter.examId)&&overlap(filter.subjectIds,[q.subjectId])&&overlap(filter.chapterIds,q.chapterIds)&&overlap(filter.syllabusNodeIds,q.syllabusNodeIds)&&overlap(filter.knowledgePointIds,q.knowledgePointIds)&&overlap(filter.types,[q.type])&&(!filter.difficulties?.length||filter.difficulties.includes(q.difficulty))&&overlap(filter.sourceTypes,[q.source.type])&&overlap(filter.sourceNatures,[q.source.nature])&&(!filter.examYears?.length||filter.examYears.includes(q.source.examYear??-1))&&overlap(filter.reviewStatuses,[q.reviewStatus])&&(!filter.text||`${q.stem} ${q.explanation??''} ${q.tags.join(' ')}`.toLowerCase().includes(filter.text.toLowerCase())));
+}

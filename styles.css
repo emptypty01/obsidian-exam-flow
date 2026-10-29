@@ -1,0 +1,48 @@
+.examflow { padding: 0 !important; }
+.ef-root { padding: 20px; max-width: 1120px; margin: 0 auto; font-family: var(--font-interface); font-size: 16px; line-height: 1.6; color: var(--text-normal); }
+.ef-header { display: flex; align-items: baseline; flex-wrap: wrap; gap: 16px; border-bottom: 2px solid var(--interactive-accent); }
+.ef-header h1 { font-size: 26px; margin: 0 0 12px; }
+.ef-header span { color: var(--text-muted); }
+.ef-root nav { display: flex; flex-wrap: wrap; gap: 8px; padding: 16px 0; border-bottom: 1px solid var(--background-modifier-border); }
+.ef-root button { min-height: 44px; padding: 8px 14px; cursor: pointer; white-space: normal; height: auto; }
+.ef-root button:disabled { cursor: default; opacity: .5; }
+.ef-root [aria-current] { background: var(--interactive-accent); color: var(--text-on-accent); }
+.ef-root :focus-visible { outline: 3px solid var(--interactive-accent); outline-offset: 3px; }
+.ef-root input:not([type=radio]):not([type=checkbox]), .ef-root textarea, .ef-root select { width: 100%; min-height: 44px; font: inherit; }
+.ef-root textarea { min-height: 110px; resize: vertical; }
+.ef-field { display: flex; flex-direction: column; gap: 6px; margin: 12px 0; min-width: 0; }
+.ef-filters { display: grid; grid-template-columns: repeat(auto-fit,minmax(150px,1fr)); gap: 12px; }
+.ef-actions, .ef-row { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+.ef-row { justify-content: space-between; color: var(--text-muted); font-size: 14px; }
+.ef-root article { padding: 20px 0; border-bottom: 1px solid var(--background-modifier-border); overflow-wrap: anywhere; }
+.ef-root article h3 { margin: 0 0 8px; }
+.ef-metrics { display: flex; flex-wrap: wrap; gap: 28px; margin: 24px 0; padding: 16px 0; border-block: 1px solid var(--background-modifier-border); }
+.ef-metrics strong { display: block; font-size: 24px; font-variant-numeric: tabular-nums; }
+.ef-empty { padding: 24px 0; color: var(--text-muted); }
+.ef-error { color: var(--text-error); white-space: pre-wrap; }
+.ef-stem { white-space: pre-wrap; overflow-wrap: anywhere; }
+.ef-option { display: flex; align-items: center; gap: 12px; min-height: 48px; cursor: pointer; padding: 8px; }
+.ef-root fieldset { border: 1px solid var(--background-modifier-border); border-radius: 6px; }
+.ef-exam { background: var(--background-primary); padding: 12px; overflow: auto; }
+.ef-exam-bar { position: sticky; top: 0; z-index: 1; background: var(--background-primary); display: flex; flex-wrap: wrap; gap: 16px; align-items: center; padding: 12px 0; }
+.ef-exam-bar strong { font-size: 28px; font-variant-numeric: tabular-nums; color: var(--text-accent); }
+.ef-root .ef-long-answer { min-height: 360px; }
+.ef-palette { display: flex; flex-wrap: wrap; gap: 8px; padding: 12px 0; }
+.ef-chart-row { display: grid; grid-template-columns: 110px 1fr 70px; gap: 12px; align-items: center; margin: 12px 0; }
+.ef-chart-row meter { width: 100%; }
+.ef-editor { padding: 20px; margin: 16px 0; border: 2px solid var(--interactive-accent); }
+.ef-bank-question > .ef-row { display: flex; }
+.ef-root .ef-bank-question { padding: 8px 0; }
+.ef-question-row { display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: center; gap: 12px; }
+.ef-question-row .ef-stem { margin: 0; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; white-space: normal; }
+.ef-question-row small { color: var(--text-muted); }
+.ef-question-row .ef-actions { flex-wrap: nowrap; gap: 6px; }
+.ef-question-row button { padding: 5px 10px; }
+@media (max-width: 600px) { .ef-question-row { grid-template-columns: minmax(0,1fr); gap: 4px; } .ef-question-row .ef-actions { justify-content: flex-end; } }
+.examflow-editor { width: min(900px,95vw); }
+.examflow-editor textarea { width: 100%; font-family: var(--font-monospace); }
+.examflow-preview { white-space: pre-wrap; overflow-wrap: anywhere; max-height: 55vh; overflow: auto; }
+.ef-root pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+.ef-performance { width: 100%; border-collapse: collapse; table-layout: fixed; overflow-wrap: anywhere; }
+.ef-performance th, .ef-performance td { text-align: left; padding: 10px 6px; border-bottom: 1px solid var(--background-modifier-border); }
+@media (max-width: 600px) { .ef-root { padding: 12px; } .ef-root nav { gap: 6px; } .ef-metrics { gap: 16px; } .ef-root button { flex-shrink: 0; } .ef-row { display: block; } }

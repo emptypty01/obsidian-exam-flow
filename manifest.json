@@ -1,0 +1,9 @@
+{
+  "id": "ExamFlow",
+  "name": "ExamFlow",
+  "version": "1.0.0",
+  "minAppVersion": "1.5.0",
+  "description": "本地真题题库、AI 组卷、考试与错题。",
+  "author": "Emptypty",
+  "isDesktopOnly": false
+}
